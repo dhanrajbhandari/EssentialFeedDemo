@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0388FC269DF5EE00FCFC82 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0388FB269DF5EE00FCFC82 /* RemoteFeedLoaderTests.swift */; };
 		AC7D40DA26980A930014C826 /* EssentialFeedDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7D40D026980A930014C826 /* EssentialFeedDemo.framework */; };
 		AC7D40DF26980A930014C826 /* EssentialFeedDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D40DE26980A930014C826 /* EssentialFeedDemoTests.swift */; };
 		AC7D40E126980A930014C826 /* EssentialFeedDemo.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7D40D326980A930014C826 /* EssentialFeedDemo.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC0388FB269DF5EE00FCFC82 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		AC7D40D026980A930014C826 /* EssentialFeedDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeedDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7D40D326980A930014C826 /* EssentialFeedDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeedDemo.h; sourceTree = "<group>"; };
 		AC7D40D426980A930014C826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				AC7D40DE26980A930014C826 /* EssentialFeedDemoTests.swift */,
 				AC7D40E026980A930014C826 /* Info.plist */,
+				AC0388FB269DF5EE00FCFC82 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = EssentialFeedDemoTests;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0388FC269DF5EE00FCFC82 /* RemoteFeedLoaderTests.swift in Sources */,
 				AC7D40DF26980A930014C826 /* EssentialFeedDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
