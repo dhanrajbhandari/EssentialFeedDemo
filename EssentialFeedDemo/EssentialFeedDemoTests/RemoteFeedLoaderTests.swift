@@ -72,13 +72,13 @@ class RemoteFeedLoaderTests: XCTestCase {
     //MARK:- Helper Method
     private func expect(_ sut:RemoteFeedLoader, toCompleteWithError error: RemoteFeedLoader.Error, when action: ()->Void, file: StaticString=#file, line: UInt=#line){
         //Act
-        var capturedErrors = [RemoteFeedLoader.Error]()
+        var capturedResults = [RemoteFeedLoader.Result]()
         sut.load {
-            capturedErrors.append ($0)
+            capturedResults.append($0)
         }
         action()
         //Assert
-        XCTAssertEqual(capturedErrors, [error], file:file, line:line)
+        XCTAssertEqual(capturedResults, [.failure(error)], file:file, line:line)
     }
     private func makeSUT(url:URL = URL.init(string: "http://a-url.com")!)-> (sut:RemoteFeedLoader, client: HTTPClientSpy){
         let client = HTTPClientSpy()
