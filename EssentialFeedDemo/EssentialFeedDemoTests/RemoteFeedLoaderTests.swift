@@ -90,7 +90,37 @@ class RemoteFeedLoaderTests: XCTestCase {
         })
         
     }
+    func test_load_doesNotDeliverResultAfterSUTInstanceDeallocated(){
+        let url = URL(string: "http://a-newUrl.com")!
+        let client = HTTPClientSpy()
+        var sut:RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
+        
+        var capturedResults = [RemoteFeedLoader.Result]()
+        sut? .load{
+            capturedResults.append($0)
+        }
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeItemJSON(items: []))
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
+    
     //MARK:- Helper Method
+    
+    private func makeSUT(url:URL = URL.init(string: "http://a-url.com")!)-> (sut:RemoteFeedLoader, client: HTTPClientSpy){
+        let client = HTTPClientSpy()
+        let sut = RemoteFeedLoader(url: url, client: client)
+        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(client)
+
+        return (sut, client)
+    }
+
+    private func trackForMemoryLeaks(_ instance: AnyObject,file: StaticString=#file, line: UInt=#line){
+        
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance,"Instance should be deallocated. Potentaion memory leak", file: file,line: line)
+        }
+    }
     private func makeItem(id:UUID, description:String?,location:String?, imageURL:URL)->(model:FeedItem, json: [String:Any]){
         
         let item = FeedItem.init(id: id, description: description, location: location, url: imageURL)
@@ -119,21 +149,8 @@ class RemoteFeedLoaderTests: XCTestCase {
         //Assert
         XCTAssertEqual(capturedResults, [result], file:file, line:line)
     }
-    private func makeSUT(url:URL = URL.init(string: "http://a-url.com")!)-> (sut:RemoteFeedLoader, client: HTTPClientSpy){
-        let client = HTTPClientSpy()
-        let sut = RemoteFeedLoader(url: url, client: client)
-        trackForMemoryLeaks(sut)
-        trackForMemoryLeaks(client)
-
-        return (sut, client)
-    }
-
-    private func trackForMemoryLeaks(_ instance: AnyObject,file: StaticString=#file, line: UInt=#line){
-        
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance,"Instance should be deallocated. Potentaion memory leak", file: file,line: line)
-        }
-    }
+    
+    //MARK:- HTTPClientSpy
     private class HTTPClientSpy: HTTPClient {
         
         private var messages = [(url:URL, completion:(HTTPClientResult) -> Void) ]()
