@@ -107,6 +107,7 @@
 				AC7D40DE26980A930014C826 /* EssentialFeedDemoTests.swift */,
 				AC7D40E026980A930014C826 /* Info.plist */,
 				AC0388FB269DF5EE00FCFC82 /* RemoteFeedLoaderTests.swift */,
+				CFE2275127227D6100192689 /* Feed API */,
 			);
 			path = EssentialFeedDemoTests;
 			sourceTree = "<group>";
@@ -118,6 +119,13 @@
 				ACF1D1EE269BFADB007932AA /* FeedLoader.swift */,
 			);
 			path = "Feed Future";
+			sourceTree = "<group>";
+		};
+		CFE2275127227D6100192689 /* Feed API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Feed API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
