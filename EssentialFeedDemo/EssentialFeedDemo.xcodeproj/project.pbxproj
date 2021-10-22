@@ -15,6 +15,7 @@
 		ACF1D1EB269BF9C3007932AA /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1D1EA269BF9C3007932AA /* FeedItem.swift */; };
 		ACF1D1EF269BFADB007932AA /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1D1EE269BFADB007932AA /* FeedLoader.swift */; };
 		CFE2274E2722715100192689 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE2274D2722715100192689 /* HTTPClient.swift */; };
+		CFE22750272271C500192689 /* FeedItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE2274F272271C500192689 /* FeedItemMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		ACF1D1EA269BF9C3007932AA /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		ACF1D1EE269BFADB007932AA /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		CFE2274D2722715100192689 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		CFE2274F272271C500192689 /* FeedItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				AC21E8CF26B8FE0100B177D1 /* RemoteFeedLoader.swift */,
 				CFE2274D2722715100192689 /* HTTPClient.swift */,
+				CFE2274F272271C500192689 /* FeedItemMapper.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF1D1EF269BFADB007932AA /* FeedLoader.swift in Sources */,
+				CFE22750272271C500192689 /* FeedItemMapper.swift in Sources */,
 				AC21E8D026B8FE0100B177D1 /* RemoteFeedLoader.swift in Sources */,
 				CFE2274E2722715100192689 /* HTTPClient.swift in Sources */,
 				ACF1D1EB269BF9C3007932AA /* FeedItem.swift in Sources */,
